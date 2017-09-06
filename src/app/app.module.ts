@@ -11,8 +11,10 @@ import { RecipeDetailComponent } from './recipes/recipe-detail/recipe-detail.com
 import { RecipeItemComponent } from './recipes/recipe-list/recipe-item/recipe-item.component';
 import { ShoppingListComponent } from './shopping-list/shopping-list.component';
 import { ShoppingEditComponent } from './shopping-list/shopping-edit/shopping-edit.component';
-import { BasicHighlightDirectiveDirective } from './basic-highlight-directive.directive';
-
+import { BasicHighlightDirective } from './basic-highlight/basic-highlight.directive';
+import { BetterHighlightDirective } from './better-highlight/better-highlight.directive';
+import { DropdownDirective } from "app/shared/dropdown.directive";
+import { ShoppingListService } from "app/shopping-list/shopping-list.service";
 @NgModule({
   declarations: [
     AppComponent,
@@ -23,14 +25,16 @@ import { BasicHighlightDirectiveDirective } from './basic-highlight-directive.di
     RecipeItemComponent,
     ShoppingListComponent,
     ShoppingEditComponent,
-    BasicHighlightDirectiveDirective
-  ],
+    BasicHighlightDirective,
+    BetterHighlightDirective,
+    DropdownDirective
+    ],
   imports: [
     BrowserModule,
     FormsModule,
     HttpModule
   ],
-  providers: [],
+  providers: [ShoppingListService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
